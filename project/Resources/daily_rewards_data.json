@@ -1,0 +1,100 @@
+{
+  "available_rewards": [
+    "gold",
+    "gems",
+    "diamond",
+    "energy",
+    "life",
+    "ticket",
+    "chest",
+    "booster",
+    "currency"
+  ],
+  "daily_login_rewards": {
+    "reward_calendar_id": "daily_rewards_week_01",
+    "calendar_name": "7 Day Login Rewards",
+    "total_days": 7,
+    "rewards": [
+      {
+        "day": 1,
+        "reward_id": "gold_100",
+        "reward_type": "gold",
+        "reward_name": "Gold Coins",
+        "reward_amount": 100,
+        "icon": "icon_gold.png"
+      },
+      {
+        "day": 2,
+        "reward_id": "gems_5",
+        "reward_type": "gems",
+        "reward_name": "Purple Gems",
+        "reward_amount": 5,
+        "icon": "icon_gem_purple.png"
+      },
+      {
+        "day": 3,
+        "reward_id": "energy_10",
+        "reward_type": "energy",
+        "reward_name": "Energy",
+        "reward_amount": 10,
+        "icon": "icon_energy.png"
+      },
+      {
+        "day": 4,
+        "reward_id": "life_1",
+        "reward_type": "life",
+        "reward_name": "Extra Life",
+        "reward_amount": 1,
+        "icon": "icon_heart.png"
+      },
+      {
+        "day": 5,
+        "reward_id": "ticket_1",
+        "reward_type": "ticket",
+        "reward_name": "Lucky Ticket",
+        "reward_amount": 1,
+        "icon": "icon_ticket.png"
+      },
+      {
+        "day": 6,
+        "reward_id": "diamond_20",
+        "reward_type": "diamond",
+        "reward_name": "Blue Diamonds",
+        "reward_amount": 20,
+        "icon": "icon_diamond.png"
+      },
+      {
+        "day": 7,
+        "reward_id": "epic_chest_01",
+        "reward_type": "chest",
+        "reward_name": "Epic Chest",
+        "reward_amount": 1,
+        "icon": "icon_epic_chest.png"
+      }
+    ]
+  },
+  "master_chest_rewards": [
+    {
+      "reward_id": "epic_chest_01",
+      "reward_type": "chest",
+      "reward_name": "Epic Chest",
+      "possible_rewards": [
+        {
+          "type": "gold",
+          "amount": 1000,
+          "weight": 40
+        },
+        {
+          "type": "gems",
+          "amount": 50,
+          "weight": 30
+        },
+        {
+          "type": "energy",
+          "amount": 100,
+          "weight": 20
+        }
+      ]
+    }
+  ]
+}
