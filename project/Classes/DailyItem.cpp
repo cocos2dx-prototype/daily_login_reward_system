@@ -120,9 +120,9 @@ void DailyItem::setup(DailyItemConfig itemConfig) {
         pLabel->enableOutline(Color4B::BLACK, 1);
     }
     
-    // Reward Name
+    // Reward Type
     {
-        auto pLabel = Label::createWithTTF(reward.rewardName, "fonts/arial.ttf", 20.0f);
+        auto pLabel = Label::createWithTTF(reward.rewardType, "fonts/arial.ttf", 30.0f);
         this->addChild(pLabel, kChildTagRewardName);
         pLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
         pLabel->setPosition(Vec2(midPos));

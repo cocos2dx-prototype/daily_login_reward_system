@@ -31,7 +31,7 @@ public:
     // UI helper
     std::vector<DailyItemConfig> buildRewardConfigs();
     DailyRewardConfig getRewardConfigByDay(int day);
-    
+    std::vector<ChestRewardConfig> getChestRewards();
 private:
 private:
     void validateProgress();
@@ -45,6 +45,7 @@ private:
     
 private:
     std::vector<DailyRewardConfig> _rewards;
+    std::vector<ChestRewardConfig> _chestRewards;
     int _claimedDayCount = 0;
     std::string _lastClaimDate;
 };

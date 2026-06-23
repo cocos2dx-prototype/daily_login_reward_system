@@ -8,6 +8,7 @@
 #include "DailyRewardManager.hpp"
 #include "json/document.h"
 #include <iomanip>
+#include "GameConfig.h"
 
 USING_NS_CC;
 
@@ -71,6 +72,24 @@ bool DailyRewardManager::initializeFromJson(
 
     load();
     validateProgress();
+    
+    // Parse Chest Reward
+    const rapidjson::Value& masterChestRewards = doc["master_chest_rewards"];
+    _chestRewards.clear();
+    
+    for (rapidjson::SizeType i = 0; i < masterChestRewards.Size(); i++) {
+        const auto& chestJson = masterChestRewards[i];
+        const auto& possibleRewards = chestJson["possible_rewards"];
+        for (rapidjson::SizeType j = 0; j < possibleRewards.Size(); j++)
+        {
+            const rapidjson::Value& r = possibleRewards[j];
+
+            ChestRewardConfig cfg;
+            cfg.rewardType = r["type"].GetString();
+            cfg.rewardAmount = r["amount"].GetInt();
+            _chestRewards.push_back(cfg);
+        }
+    }
 
     return true;
 }
@@ -95,7 +114,20 @@ void DailyRewardManager::save() {
 }
 
 bool DailyRewardManager::canClaimToday() const {
-    return _lastClaimDate != getTodayDate();
+    if (_lastClaimDate.empty()) {
+        return true;
+    }
+
+    const int diff =
+        getDaysDifference(
+            _lastClaimDate,
+            getTodayDate());
+
+    if (diff < 0) {
+        return false;
+    }
+
+    return diff >= 1;
 }
 
 bool DailyRewardManager::claimReward() {
@@ -157,6 +189,10 @@ DailyRewardConfig DailyRewardManager::getRewardConfigByDay(int day) {
     return reward;
 }
 
+std::vector<ChestRewardConfig> DailyRewardManager::getChestRewards() {
+    return _chestRewards;
+}
+
 void DailyRewardManager::validateProgress() {
     if (_lastClaimDate.empty()) {
         return;
@@ -166,11 +202,14 @@ void DailyRewardManager::validateProgress() {
         _lastClaimDate,
         getTodayDate());
 
-    if (diff <= 1) {
+    if (diff < 0) {
+        CCLOG("DailyReward: System clock moved backwards.");
         return;
     }
-
-    resetProgress();
+    
+    if (diff > 1) {
+        resetProgress();
+    }
 }
 
 void DailyRewardManager::resetProgress() {
@@ -181,6 +220,10 @@ void DailyRewardManager::resetProgress() {
 }
 
 std::string DailyRewardManager::getTodayDate() const {
+    
+#if (DEBUG > 0)
+    return DEBUG_DATE;
+#endif
     std::time_t now = std::time(nullptr);
 
     std::tm t;

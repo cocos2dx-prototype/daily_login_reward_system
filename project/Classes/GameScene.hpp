@@ -22,6 +22,7 @@ public:
 	enum ChildTag {
         None = 0,
         kChildTagDailyItem,
+        kChildTagPopupDailyReward,
 	};
 
 public:

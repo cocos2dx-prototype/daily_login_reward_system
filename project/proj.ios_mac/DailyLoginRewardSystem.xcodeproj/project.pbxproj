@@ -47,6 +47,10 @@
 		C87836DE2FE99B6300DB317B /* DailyRewardManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C87836DC2FE99B6300DB317B /* DailyRewardManager.cpp */; };
 		C87836E02FE9A77700DB317B /* daily_rewards_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C87836DF2FE9A77700DB317B /* daily_rewards_data.json */; };
 		C87836E12FE9A77800DB317B /* daily_rewards_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C87836DF2FE9A77700DB317B /* daily_rewards_data.json */; };
+		C87836E72FEAC16E00DB317B /* PopupDailyReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C87836E62FEAC16E00DB317B /* PopupDailyReward.cpp */; };
+		C87836E82FEAC16E00DB317B /* PopupDailyReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C87836E62FEAC16E00DB317B /* PopupDailyReward.cpp */; };
+		C87837022FEAF1ED00DB317B /* ExitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C87837012FEAF1ED00DB317B /* ExitButton.png */; };
+		C87837032FEAF1ED00DB317B /* ExitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C87837012FEAF1ED00DB317B /* ExitButton.png */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -137,6 +141,10 @@
 		C87836DB2FE99B6300DB317B /* DailyRewardManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DailyRewardManager.hpp; sourceTree = "<group>"; };
 		C87836DC2FE99B6300DB317B /* DailyRewardManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DailyRewardManager.cpp; sourceTree = "<group>"; };
 		C87836DF2FE9A77700DB317B /* daily_rewards_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daily_rewards_data.json; sourceTree = "<group>"; };
+		C87836E42FEABD0A00DB317B /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		C87836E52FEAC16E00DB317B /* PopupDailyReward.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PopupDailyReward.hpp; sourceTree = "<group>"; };
+		C87836E62FEAC16E00DB317B /* PopupDailyReward.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopupDailyReward.cpp; sourceTree = "<group>"; };
+		C87837012FEAF1ED00DB317B /* ExitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitButton.png; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -269,6 +277,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C87837012FEAF1ED00DB317B /* ExitButton.png */,
 				C87836DF2FE9A77700DB317B /* daily_rewards_data.json */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 			);
@@ -289,6 +298,9 @@
 				C87836DA2FE9934500DB317B /* GameDefine.h */,
 				C87836DB2FE99B6300DB317B /* DailyRewardManager.hpp */,
 				C87836DC2FE99B6300DB317B /* DailyRewardManager.cpp */,
+				C87836E42FEABD0A00DB317B /* GameConfig.h */,
+				C87836E52FEAC16E00DB317B /* PopupDailyReward.hpp */,
+				C87836E62FEAC16E00DB317B /* PopupDailyReward.cpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -417,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C87836E02FE9A77700DB317B /* daily_rewards_data.json in Resources */,
+				C87837022FEAF1ED00DB317B /* ExitButton.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
@@ -431,6 +444,7 @@
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				C87836E12FE9A77800DB317B /* daily_rewards_data.json in Resources */,
+				C87837032FEAF1ED00DB317B /* ExitButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C87836DE2FE99B6300DB317B /* DailyRewardManager.cpp in Sources */,
+				C87836E82FEAC16E00DB317B /* PopupDailyReward.cpp in Sources */,
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				C87836D72FE989D900DB317B /* DailyItem.cpp in Sources */,
@@ -458,6 +473,7 @@
 				C87836DD2FE99B6300DB317B /* DailyRewardManager.cpp in Sources */,
 				C87836D82FE989D900DB317B /* DailyItem.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				C87836E72FEAC16E00DB317B /* PopupDailyReward.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				C87836D22FE8FC5700DB317B /* GameScene.cpp in Sources */,
 			);

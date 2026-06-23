@@ -8,6 +8,7 @@
 
 #include "GameScene.hpp"
 #include "StyleGuide.h"
+#include "PopupDailyReward.hpp"
 
 USING_NS_CC;
 
@@ -96,10 +97,15 @@ void GameScene::initObjects() {
 
 void GameScene::_onRewardTouched(int day) {
     if (_dailyRewardManager->canClaimToday() && _dailyRewardManager->claimReward()) {
-        auto reward = _dailyRewardManager->getRewardConfigByDay(day);
-        CCLOG("Day = %d", reward.day);
-        CCLOG("Reward Name = %s", reward.rewardName.c_str());
-        CCLOG("Reward Amount = %d", reward.rewardAmount);
+        auto pPopup = PopupDailyReward::createPopupDailyReward();
+        this->addChild(pPopup, kChildTagPopupDailyReward);
+        if (day < 7) {
+            auto reward = _dailyRewardManager->getRewardConfigByDay(day);
+            pPopup->buildNormalRewardUI(reward);
+        } else {
+            auto chestReward = _dailyRewardManager->getChestRewards();
+            pPopup->buildChestRewardUI(chestReward);
+        }
         _refreshUI();
     }
 }

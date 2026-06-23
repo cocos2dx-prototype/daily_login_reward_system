@@ -35,4 +35,9 @@ struct DailyItemConfig
     RewardState state = RewardState::Locked;
 };
 
+struct ChestRewardConfig {
+    std::string rewardType;
+    int rewardAmount;
+};
+
 #endif /* GameDefine_h */
