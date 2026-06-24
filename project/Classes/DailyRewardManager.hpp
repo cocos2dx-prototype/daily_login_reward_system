@@ -33,7 +33,6 @@ public:
     DailyRewardConfig getRewardConfigByDay(int day);
     std::vector<ChestRewardConfig> getChestRewards();
 private:
-private:
     void validateProgress();
     void resetProgress();
     
